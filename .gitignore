@@ -1,0 +1,5 @@
+*.json
+*.env
+*.gpg
+firebase-spells-go
+firebase-spells-go.exe
