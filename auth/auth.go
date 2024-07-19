@@ -77,7 +77,6 @@ func (fa *FirebaseAuth) AuthenticateUser(email, password string) (string, error)
 			return "", fmt.Errorf("ID token not found in response")
 		}
 		fa.idToken = idToken
-		// fmt.Println("ID Token: ", idToken)
 		return idToken, nil
 	}
 
@@ -101,7 +100,6 @@ func (fa *FirebaseAuth) GetSessionCookie(expiresIn int64) (string, error) {
 		return "", fmt.Errorf("failed to create session cookie: %v", err)
 	}
 
-	// fmt.Println("Session Cookie: ", sessionCookie)
 	fa.sessionCookie = sessionCookie
 	return sessionCookie, nil
 }
@@ -142,7 +140,6 @@ func (fa *FirebaseAuth) CreateCustomToken(uid string) (string, error) {
 		return "", fmt.Errorf("failed to create custom token: %v", err)
 	}
 
-	fmt.Println("Custom Token: ", customToken)
 	fa.customToken = customToken
 	return customToken, nil
 }
