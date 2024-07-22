@@ -45,6 +45,18 @@ func (fa *FirebaseAuth) SetAPIKey(apiKey string) {
 	fa.authURL = fmt.Sprintf("%s?key=%s", fa.baseURL, fa.apiKey)
 }
 
+func (fa *FirebaseAuth) SetIdToken(idToken string) {
+	fa.idToken = idToken
+}
+
+func (fa *FirebaseAuth) SetSessionCookie(sessionCookie string) {
+	fa.sessionCookie = sessionCookie
+}
+
+func (fa *FirebaseAuth) SetCustomToken(customToken string) {
+	fa.customToken = customToken
+}
+
 func (fa *FirebaseAuth) AuthenticateUser(email, password string) (string, error) {
 	if fa.apiKey == "" {
 		return "", fmt.Errorf("API Key is not set")
